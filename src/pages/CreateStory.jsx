@@ -1,4 +1,3 @@
-// src/pages/CreateStory.js
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function CreateStory() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState({});
-  const [contentError, setContentError] = useState(""); // State to handle parsing errors
+  const [contentError, setContentError] = useState("");
   const navigate = useNavigate();
 
   const handleCreateStory = async (e) => {
@@ -33,7 +32,7 @@ function CreateStory() {
     try {
       const parsedContent = JSON.parse(inputValue);
       setContent(parsedContent);
-      setContentError(""); // Clear error if parsing is successful
+      setContentError("");
     } catch (error) {
       setContentError("Invalid JSON format. Please correct it.");
     }

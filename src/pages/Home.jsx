@@ -1,4 +1,3 @@
-// src/pages/Home.js
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -11,11 +10,11 @@ function Home() {
     const fetchStories = async () => {
       try {
         const { data } = await axios.get("http://localhost:5000/api/stories");
-        // Ensure the data is an array before setting it to stories
+
         setStories(Array.isArray(data) ? data : []);
       } catch (error) {
         console.error("Failed to fetch stories", error);
-        setStories([]); // Set stories to an empty array on error
+        setStories([]);
       }
     };
 
